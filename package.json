@@ -1,0 +1,31 @@
+{
+  "name": "agent-seo",
+  "version": "0.1.0",
+  "description": "Drop-in GEO/AEO kit: generates llms.txt, llms-full.txt, robots.txt with AI-crawler allow-list, sitemap.xml, humans.txt, security.txt, and JSON-LD head block. Zero dependencies.",
+  "keywords": ["seo", "geo", "aeo", "llms.txt", "schema.org", "json-ld", "ai", "llm", "faqpage", "howto", "ai-search", "chatgpt", "perplexity", "generative-engine-optimization", "answer-engine-optimization"],
+  "author": "Desired Solutions (https://desiredsolutions.me)",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/dnzengou/agent-seo#readme",
+  "bugs": { "url": "https://github.com/dnzengou/agent-seo/issues" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnzengou/agent-seo.git"
+  },
+  "engines": { "node": ">=18" },
+  "bin": { "agent-seo": "./bin/agent-seo.mjs" },
+  "main": "./scripts/generate.mjs",
+  "files": [
+    "bin/",
+    "scripts/",
+    "templates/",
+    "example.config.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node scripts/generate.mjs",
+    "example": "node scripts/generate.mjs example.config.json /tmp/agent-seo-example",
+    "test": "node scripts/smoke.mjs"
+  }
+}
