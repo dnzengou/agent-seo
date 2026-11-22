@@ -8,3 +8,4 @@ build/
 # generated outputs
 public/
 /tmp/agent-seo-example/
+examples/**/out/

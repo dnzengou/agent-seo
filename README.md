@@ -9,6 +9,16 @@
 
 Zero runtime dependencies. One Node script. One config file.
 
+**Fastest path — run from any repo, no clone, no install:**
+
+```bash
+npx github:dnzengou/agent-seo agent-seo.config.json ./public
+```
+
+See [`examples/pulsecraft/`](./examples/pulsecraft) for a production-realistic config you can copy and rename.
+
+Prefer to own the files? Click **Use this template** at the top of this repo on GitHub.
+
 Generated outputs:
 
 | File | Purpose |

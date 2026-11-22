@@ -1,0 +1,45 @@
+{
+  "name": "Pulsecraft",
+  "url": "https://pulsecraft.app/",
+  "tagline": "Browser-based rhythm trainer for drummers.",
+  "description": "A free, no-install rhythm training tool. Pick a pattern, set a tempo, drum on your phone or desk. Works offline after first load.",
+  "publisher": {
+    "name": "Pulsecraft",
+    "url": "https://pulsecraft.app",
+    "sameAs": [
+      "https://github.com/oduya/pulsecraft",
+      "https://mastodon.social/@pulsecraft",
+      "https://www.producthunt.com/products/pulsecraft"
+    ]
+  },
+  "github": "https://github.com/oduya/pulsecraft",
+  "searchParam": "q",
+  "schemaType": "WebApplication",
+  "applicationCategory": "MultimediaApplication",
+  "priceValue": 0,
+  "priceCurrency": "EUR",
+  "tools": [
+    { "id": "home",      "cat": "main",     "label": "Home",             "desc": "Primary entry point",                           "url": "https://pulsecraft.app/" },
+    { "id": "patterns",  "cat": "practice", "label": "Pattern library",  "desc": "200+ patterns tagged by style and difficulty", "url": "https://pulsecraft.app/patterns", "exampleQuery": "rhythm patterns for drummers" },
+    { "id": "metronome", "cat": "practice", "label": "Visual metronome", "desc": "High-contrast visual click, no audio needed",   "url": "https://pulsecraft.app/metronome" },
+    { "id": "export",    "cat": "export",   "label": "Export to MIDI",   "desc": "Download a pattern as .mid or .wav",            "url": "https://pulsecraft.app/export" }
+  ],
+  "faq": [
+    { "q": "Is Pulsecraft free?",                        "a": "Yes. No account, no install, no ads. Open the site and play." },
+    { "q": "Does it work offline?",                      "a": "After first load, yes. The site is a PWA that caches its assets." },
+    { "q": "Does it work on iPhone?",                    "a": "Yes. Any mobile browser from 2019 onward works, including Safari on iOS." },
+    { "q": "Can I export patterns to Logic or Ableton?", "a": "Yes. Each pattern exports as MIDI or WAV." },
+    { "q": "Who is Pulsecraft for?",                     "a": "Self-taught drummers, music-school students, and teachers running group sessions on a shared screen." }
+  ],
+  "howto": {
+    "name": "Practice a new rhythm in five minutes with Pulsecraft",
+    "totalTime": "PT5M",
+    "steps": [
+      { "name": "Open the site",        "text": "Go to pulsecraft.app on any device.",                                    "url": "https://pulsecraft.app/" },
+      { "name": "Pick a pattern",       "text": "Open the library, filter by style, pick one at your level.",             "url": "https://pulsecraft.app/patterns" },
+      { "name": "Set a tempo",          "text": "Start at 70% of the pattern's target BPM.",                              "url": "https://pulsecraft.app/metronome" },
+      { "name": "Play it twenty times", "text": "Loop at that tempo until you can play it without looking at the screen." },
+      { "name": "Raise the tempo 5%",   "text": "Nudge the metronome up until you're at target BPM.",                      "url": "https://pulsecraft.app/metronome" }
+    ]
+  }
+}
