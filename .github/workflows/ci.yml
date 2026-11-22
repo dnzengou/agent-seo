@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node --version
+      - name: Example generation
+        run: node scripts/generate.mjs example.config.json /tmp/agent-seo-out
+      - name: Verify outputs exist
+        run: |
+          for f in llms.txt llms-full.txt robots.txt sitemap.xml humans.txt head.jsonld.html .well-known/security.txt; do
+            test -s "/tmp/agent-seo-out/$f" || { echo "missing or empty: $f"; exit 1; }
+          done
+      - name: Verify robots.txt welcomes AI crawlers
+        run: |
+          for ua in GPTBot ClaudeBot PerplexityBot Google-Extended Bytespider; do
+            grep -q "^User-agent: $ua$" /tmp/agent-seo-out/robots.txt || { echo "missing UA: $ua"; exit 1; }
+          done
+      - name: Verify JSON-LD includes expected types
+        run: |
+          for type in Organization WebSite SoftwareApplication BreadcrumbList FAQPage HowTo; do
+            grep -q "\"@type\": \"$type\"" /tmp/agent-seo-out/head.jsonld.html || { echo "missing JSON-LD type: $type"; exit 1; }
+          done
+      - run: npm test
